@@ -177,3 +177,23 @@ if __name__ == "__main__":
     expression = input("Въведете израз: ")
     uppercase, lowercase = count_letters(expression)
     print(f"Главни букви: {uppercase}, Малки букви: {lowercase}")
+
+
+# Стъпка 1: Създаване и запис във файла
+capitals = [
+"Sofia",
+"Instanbul",
+"Madrid",
+"Paris"
+]
+
+# Записваме имената във файла
+with open("cities.txt", "w", encoding="utf-8") as file:
+    for capital in capitals:
+        file.write(capital + "\n")
+
+# Стъпка 2: Прочитане и показване на съдържанието на файла
+print("Съдържание на файла cities.txt:")
+with open("cities.txt", "r", encoding="utf-8") as file:
+    content = file.read()
+    print(content)
